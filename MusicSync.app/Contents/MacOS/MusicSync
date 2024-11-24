@@ -1,0 +1,13 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+VENV_PATH="$DIR/../Resources/venv"
+export PYTHONPATH="$DIR/../Resources/lib"
+
+# Activate virtual environment
+source "$VENV_PATH/bin/activate"
+
+# Set environment variables for system libraries
+export DYLD_LIBRARY_PATH="/usr/local/lib:$DYLD_LIBRARY_PATH"
+
+# Launch application
+exec "$VENV_PATH/bin/python3" "$DIR/../Resources/lib/main.py" "$@"

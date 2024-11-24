@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/amym/coding projects/Music_player_sync/MusicSync.app/Contents/Resources/venv/bin/python3.13" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from mutagen._tools.mid3v2 import entry_point
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(entry_point())
